@@ -83,5 +83,6 @@ dependencies {
     implementation(libs.com.google.dagger.hilt.android)
     kapt(libs.com.google.dagger.hilt.android.compiler)
 
-    implementation("org.matrix.android:matrix-android-sdk2:1.5.30")
+    //lottie video splash screen
+    implementation("com.airbnb.android:lottie-compose:6.1.0")
 }
