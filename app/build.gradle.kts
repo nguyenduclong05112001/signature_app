@@ -67,6 +67,7 @@ dependencies {
 
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.preview)
+    implementation("androidx.core:core-ktx:+")
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
@@ -85,4 +86,7 @@ dependencies {
 
     //lottie video splash screen
     implementation("com.airbnb.android:lottie-compose:6.1.0")
+
+    //navigation animate
+    implementation("com.google.accompanist:accompanist-navigation-animation:0.33.0-alpha")
 }
