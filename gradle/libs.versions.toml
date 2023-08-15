@@ -1,6 +1,7 @@
 [versions]
 
 compileSdk = "34"
+lottieCompose = "6.1.0"
 minSdk = "26"
 targetSdk = "34"
 versionCode = "1"
@@ -8,7 +9,7 @@ versionName = "1.0"
 jvmTarget = "17"
 kotlinCompilerExtensionVersion = "1.5.0"
 
-androidGradlePlugin = "8.0.2"
+androidGradlePlugin = "8.1.0"
 jetbrainsKotlin = "1.9.0"
 hiltAndroid = "2.47"
 
@@ -17,12 +18,12 @@ androidxAppcompat = "1.6.1"
 androidxLifecycle = "2.6.1"
 androidxActivity = "1.7.2"
 
-composeUiVersion = "1.4.3"
+composeUiVersion = "1.5.0"
 androidxComposeMaterial = "1.1.1"
 junitVer = "4.13.2"
 androidxTestExtjunit = "1.1.5"
 androidxTestEspressoCore = "3.5.1"
-androidxNavigationCompose = "2.6.0"
+androidxNavigationCompose = "2.7.0"
 comGoogleAndroidMaterial = "1.9.0"
 
 roomRersion = "2.5.2"
@@ -58,3 +59,4 @@ com-google-dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-and
 
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRersion" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRersion" }
+lottie-compose = { module = "com.airbnb.android:lottie-compose", version.ref = "lottieCompose" }

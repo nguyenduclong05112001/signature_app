@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">app</string>
+
+    <!--home-->
     <string name="notify_back_out_app">click back again to exit</string>
+    <string name="create">Create</string>
+    <string name="generator">Generator</string>
+
+    <!--Setting-->
+    <string name="setting">Setting</string>
 </resources>

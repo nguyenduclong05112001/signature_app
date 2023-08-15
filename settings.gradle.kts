@@ -23,6 +23,5 @@ dependencyResolutionManagement {
 rootProject.name = "BaseCode"
 include(":app")
 include(":core:ui")
-include(":core:dimension")
 include(":core:data")
 include(":core:matrix")

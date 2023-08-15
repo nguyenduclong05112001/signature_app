@@ -1,6 +1,5 @@
 package com.longhrk.app.ui
 
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
@@ -10,6 +9,7 @@ import com.longhrk.app.MainActivity
 import com.longhrk.app.ui.event.NavEvent
 import com.longhrk.app.ui.screen.HomeScreen
 import com.longhrk.app.ui.screen.OtherScreen
+import com.longhrk.app.ui.screen.SettingScreen
 import com.longhrk.app.ui.screen.SplashScreen
 
 @Composable
@@ -32,10 +32,10 @@ fun NavGraph(eventHandler: EventHandler, navController: NavHostController) {
 
         composable(NavTarget.Home.route) {
             HomeScreen(
-                onNextScreen = {
+                onSettingScreen = {
                     eventHandler.postNavEvent(
                         event = NavEvent.Action(
-                            target = NavTarget.Other
+                            target = NavTarget.Setting
                         )
                     )
                 },
@@ -45,9 +45,13 @@ fun NavGraph(eventHandler: EventHandler, navController: NavHostController) {
             )
         }
 
-        composable(NavTarget.Other.route) {
-            OtherScreen(
-                onClick = { }
+        composable(NavTarget.Setting.route) {
+            SettingScreen(
+                onBackScreen = {
+                    eventHandler.postNavEvent(
+                        event = NavEvent.PopBackStack()
+                    )
+                }
             )
         }
     }

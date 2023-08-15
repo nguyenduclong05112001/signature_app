@@ -4,7 +4,7 @@ sealed class NavTarget(val route: String) {
 
     object Splash : NavTarget("splash")
     object Home : NavTarget("home")
-    object Other : NavTarget("other")
+    object Setting : NavTarget("setting")
 
     override fun toString(): String {
         return route
