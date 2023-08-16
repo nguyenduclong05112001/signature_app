@@ -8,4 +8,7 @@
 
     <!--Setting-->
     <string name="setting">Setting</string>
+
+    <!--Draw Signature-->
+    <string name="color">Colors</string>
 </resources>

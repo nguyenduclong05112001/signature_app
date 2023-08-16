@@ -84,4 +84,5 @@ dependencies {
 
     //lottie video splash screen
     implementation(libs.lottie.compose)
+    implementation("io.ak1:drawbox:1.0.3")
 }
