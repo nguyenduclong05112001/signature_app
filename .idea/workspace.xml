@@ -10,17 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f67d207c-4128-4cc5-8614-14e4a71eb836" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/components/HeaderApp.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/extensions/ColorExtension.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/draw/ColorOptions.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/draw/ColorPickerOption.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/draw/ContentDrawScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/draw/DrawOptions.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/draw/SizeOption.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/viewmodel/drag/DrawSignatureViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/viewmodel/drag/data/DefaultColors.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/viewmodel/drag/model/TypeExpanded.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/color_picker.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/color_picker.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2.1/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2.1/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2.1/checksums/sha1-checksums.bin" afterDir="false" />
@@ -34,28 +24,16 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/BaseCode.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/BaseCode.app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/3/539360536b1a26158f6c4beeef951856352cb3ef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/4/749edfcc96398253e5b3416184e95c46621da850" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/7/d7595319a0658be6f1ed500ad590d42e4b28bc4f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/3/539360536b1a26158f6c4beeef951856352cb3ef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/4/749edfcc96398253e5b3416184e95c46621da850" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/7/d7595319a0658be6f1ed500ad590d42e4b28bc4f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/NavGraph.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/NavGraph.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/NavTarget.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/NavTarget.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/components/ButtonMain.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/components/ButtonMain.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/DrawSignatureScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/draw/DrawSignatureScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/HomeScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/home/HomeScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/OtherScreen.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/SettingScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/setting/SettingScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/theme/Color.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/theme/Color.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/theme/Theme.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/theme/Theme.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/draw/ColorOptions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/draw/ColorOptions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/draw/ColorPickerOption.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/draw/ColorPickerOption.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/draw/ContentDrawScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/draw/ContentDrawScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/draw/DrawOptions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/draw/DrawOptions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/draw/DrawSignatureScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/draw/DrawSignatureScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/draw/SizeOption.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/screen/draw/SizeOption.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/viewmodel/drag/DrawSignatureViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/longhrk/app/ui/viewmodel/drag/DrawSignatureViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/color_picker.jpeg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

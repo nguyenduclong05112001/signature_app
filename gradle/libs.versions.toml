@@ -1,6 +1,6 @@
 [versions]
 
-colorpickerview = "2.2.4"
+colorpickerCompose = "1.0.4"
 compileSdk = "34"
 constraintlayoutCompose = "1.0.1"
 drawbox = "1.0.3"
@@ -45,7 +45,7 @@ androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "a
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 androidx-lifecycle = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidxLifecycle" }
 androidx-activity = { module = "androidx.activity:activity-compose", version.ref = "androidxActivity" }
-colorpickerview = { module = "com.github.skydoves:colorpickerview", version.ref = "colorpickerview" }
+colorpicker-compose = { module = "com.github.skydoves:colorpicker-compose", version.ref = "colorpickerCompose" }
 com-google-android-material = { module = "com.google.android.material:material", version.ref = "comGoogleAndroidMaterial" }
 
 androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "composeUiVersion" }

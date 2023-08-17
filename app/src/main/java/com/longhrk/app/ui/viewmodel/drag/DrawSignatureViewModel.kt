@@ -12,6 +12,7 @@ import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.compose.material3.MaterialTheme
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.longhrk.app.ui.viewmodel.drag.model.TypeExpanded
@@ -33,6 +34,20 @@ class DrawSignatureViewModel @Inject constructor() : ViewModel() {
 
     private var _currentTypeExpanded = MutableStateFlow(TypeExpanded.NONE)
     val currentTypeExpanded = _currentTypeExpanded.asStateFlow()
+
+    private var _currentDrawColor = MutableStateFlow("#FF0000")
+    val currentDrawColor = _currentDrawColor.asStateFlow()
+
+    private var _currentStrokeWidth = MutableStateFlow(10f)
+    val currentStrokeWidth = _currentStrokeWidth.asStateFlow()
+
+    fun updateCurrentColor(colorString: String){
+        _currentDrawColor.value = colorString
+    }
+
+    fun updateCurrentStrokeWidth(width: Float){
+        _currentStrokeWidth.value = width
+    }
 
     fun updateTypeExpanded(type: TypeExpanded) {
         if (_currentTypeExpanded.value == type) {

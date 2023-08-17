@@ -79,6 +79,7 @@ fun ColorOptions(
                         indication = null
                     ) {
                         currentChecked = it
+                        drawSignatureViewModel.updateCurrentColor(it)
                     }) {
                     Icon(
                         modifier = Modifier.size(32.dp),

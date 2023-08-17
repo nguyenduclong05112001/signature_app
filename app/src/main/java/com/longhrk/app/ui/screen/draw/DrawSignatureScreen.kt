@@ -27,10 +27,6 @@ fun DrawSignatureScreen(
     drawSignatureViewModel: DrawSignatureViewModel,
     onBackScreen: () -> Unit
 ) {
-    var isShowAdvance by remember {
-        mutableStateOf(false)
-    }
-
     Column(
         modifier = Modifier
             .fillMaxSize()

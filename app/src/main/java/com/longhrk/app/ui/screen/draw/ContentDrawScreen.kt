@@ -8,6 +8,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asAndroidBitmap
@@ -15,6 +18,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
+import com.longhrk.app.ui.extensions.toColor
 import com.longhrk.app.ui.viewmodel.drag.DrawSignatureViewModel
 import com.longhrk.app.ui.viewmodel.drag.model.TypeExpanded
 import io.ak1.drawbox.DrawBox
@@ -27,7 +31,20 @@ fun ContentDrawScreen(
     drawSignatureViewModel: DrawSignatureViewModel
 ) {
     val context = LocalContext.current
-    val controller = rememberDrawController()
+    val controller = rememberDrawController().apply {
+        changeBgColor(MaterialTheme.colorScheme.onBackground.copy(0.3f))
+    }
+
+    val currentDrawColor by drawSignatureViewModel.currentDrawColor.collectAsState()
+    val currentStrokeWidth by drawSignatureViewModel.currentStrokeWidth.collectAsState()
+
+    LaunchedEffect(currentDrawColor) {
+        controller.changeColor(currentDrawColor.toColor())
+    }
+
+    LaunchedEffect(currentStrokeWidth) {
+        controller.changeStrokeWidth(currentStrokeWidth)
+    }
 
     ConstraintLayout(modifier = modifier) {
         val (drawContent, drawOptions) = createRefs()
@@ -42,8 +59,7 @@ fun ContentDrawScreen(
 
                     width = Dimension.matchParent
                     height = Dimension.fillToConstraints
-                }
-                .background(MaterialTheme.colorScheme.background),
+                },
             drawController = controller,
             bitmapCallback = { imageBitmap, _ ->
                 imageBitmap?.let {

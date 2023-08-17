@@ -93,5 +93,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout.compose)
 
     //color picker view
-    implementation (libs.colorpickerview)
+    implementation(libs.colorpicker.compose)
+
+    implementation("io.coil-kt:coil-compose:2.4.0")
 }
