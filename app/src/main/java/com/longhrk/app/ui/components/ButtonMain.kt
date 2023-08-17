@@ -3,6 +3,7 @@ package com.longhrk.app.ui.components
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -20,6 +21,12 @@ fun ButtonMain(
 ) {
     Button(
         modifier = modifier,
+        colors = ButtonDefaults.buttonColors(
+            containerColor = MaterialTheme.colorScheme.primary,
+            contentColor = MaterialTheme.colorScheme.onPrimary,
+            disabledContainerColor = MaterialTheme.colorScheme.primary.copy(0.5f),
+            disabledContentColor = MaterialTheme.colorScheme.onPrimary.copy(0.5f),
+        ),
         onClick = onClickButton,
     ) {
         Column(

@@ -10,5 +10,10 @@
     <string name="setting">Setting</string>
 
     <!--Draw Signature-->
+    <string name="draw_signature">Draw your signature</string>
     <string name="color">Colors</string>
+    <string name="color_picker">Color Picker</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
+    <string name="draw_size">Draw size</string>
 </resources>

@@ -1,6 +1,10 @@
 [versions]
 
+colorpickerview = "2.2.4"
 compileSdk = "34"
+constraintlayoutCompose = "1.0.1"
+drawbox = "1.0.3"
+hiltNavigationCompose = "1.0.0"
 lottieCompose = "6.1.0"
 minSdk = "26"
 targetSdk = "34"
@@ -35,10 +39,13 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "jetbrains
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hiltAndroid" }
 
 [libraries]
+androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintlayoutCompose" }
 androidx-core = { module = "androidx.core:core-ktx", version.ref = "androidXCore" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidxAppcompat" }
+androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 androidx-lifecycle = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidxLifecycle" }
 androidx-activity = { module = "androidx.activity:activity-compose", version.ref = "androidxActivity" }
+colorpickerview = { module = "com.github.skydoves:colorpickerview", version.ref = "colorpickerview" }
 com-google-android-material = { module = "com.google.android.material:material", version.ref = "comGoogleAndroidMaterial" }
 
 androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "composeUiVersion" }
@@ -48,6 +55,7 @@ androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", versi
 androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "composeUiVersion" }
 
 androidx-compose-material = { module = "androidx.compose.material3:material3", version.ref = "androidxComposeMaterial" }
+drawbox = { module = "io.ak1:drawbox", version.ref = "drawbox" }
 junit = { module = "junit:junit", version.ref = "junitVer" }
 androidx-test-ext-junit = { module = "androidx.test.ext:junit", version.ref = "androidxTestExtjunit" }
 androidx-test-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidxTestEspressoCore" }

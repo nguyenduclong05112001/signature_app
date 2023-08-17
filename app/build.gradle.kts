@@ -80,9 +80,18 @@ dependencies {
 
     //dagger
     implementation(libs.com.google.dagger.hilt.android)
+    implementation(libs.androidx.hilt.navigation.compose)
     kapt(libs.com.google.dagger.hilt.android.compiler)
 
     //lottie video splash screen
     implementation(libs.lottie.compose)
-    implementation("io.ak1:drawbox:1.0.3")
+
+    //drawbox
+    implementation(libs.drawbox)
+
+    //constraintlayout
+    implementation(libs.androidx.constraintlayout.compose)
+
+    //color picker view
+    implementation (libs.colorpickerview)
 }

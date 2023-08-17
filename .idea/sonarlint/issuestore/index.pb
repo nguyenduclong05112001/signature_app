@@ -17,9 +17,3 @@ a
 1app/src/main/java/com/longhrk/app/MainActivity.kt,f/f/ffe2e6891e7dc39dee8e2dccd77719b415cc2599
 c
 3app/src/main/java/com/longhrk/app/ui/theme/Shape.kt,9/5/953a5c8e5dd0210cdf01256aa204d9187187c8fd
-a
-1app/src/main/java/com/longhrk/app/ui/NavTarget.kt,5/3/539360536b1a26158f6c4beeef951856352cb3ef
-C
-settings.gradle.kts,7/4/749edfcc96398253e5b3416184e95c46621da850
-I
-gradle/libs.versions.toml,d/7/d7595319a0658be6f1ed500ad590d42e4b28bc4f
