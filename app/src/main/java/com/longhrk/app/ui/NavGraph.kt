@@ -10,10 +10,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.longhrk.app.MainActivity
 import com.longhrk.app.ui.event.NavEvent
+import com.longhrk.app.ui.screen.SplashScreen
 import com.longhrk.app.ui.screen.draw.DrawSignatureScreen
 import com.longhrk.app.ui.screen.home.HomeScreen
 import com.longhrk.app.ui.screen.setting.SettingScreen
-import com.longhrk.app.ui.screen.SplashScreen
 import com.longhrk.app.ui.viewmodel.drag.DrawSignatureViewModel
 
 @RequiresApi(Build.VERSION_CODES.Q)

@@ -16,7 +16,9 @@ import com.longhrk.app.ui.NavGraph
 import com.longhrk.app.ui.extensions.handleNavEvent
 import com.longhrk.app.ui.theme.LongHRK_Signature_Them
 import com.longhrk.app.ui.viewmodel.NavViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     private val navigationViewModel by viewModels<NavViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {

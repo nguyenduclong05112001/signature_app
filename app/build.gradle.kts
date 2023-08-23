@@ -1,3 +1,5 @@
+import com.android.build.api.dsl.Packaging
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -33,20 +35,25 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
         jvmTarget = libs.versions.jvmTarget.get()
     }
+
     buildFeatures {
         compose = true
     }
+
     composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.kotlinCompilerExtensionVersion.get()
     }
-    packagingOptions {
+
+    fun Packaging.() {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
@@ -59,6 +66,7 @@ android {
 
 dependencies {
     implementation(project(":core:data"))
+    implementation(project(":core:network"))
 
     implementation(libs.androidx.core)
     implementation(libs.androidx.lifecycle)
@@ -95,5 +103,12 @@ dependencies {
     //color picker view
     implementation(libs.colorpicker.compose)
 
-    implementation("io.coil-kt:coil-compose:2.4.0")
+    //coil (handle image)
+    implementation(libs.coil.compose)
+
+    //gson
+    implementation (libs.gson)
+
+    // Timer
+    implementation (libs.timber)
 }
