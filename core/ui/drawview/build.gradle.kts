@@ -4,11 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "com.longhrk.core.ui"
+    namespace = "com.longhrk.drawview"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -22,20 +23,31 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
         jvmTarget = libs.versions.jvmTarget.get()
     }
 }
 
 dependencies {
+
     implementation(libs.androidx.core)
     implementation(libs.androidx.appcompat)
     implementation(libs.com.google.android.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.espresso.core)
+
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.ui.preview)
+    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
+    debugImplementation(libs.androidx.compose.ui.tooling)
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    implementation(libs.androidx.compose.material)
 }

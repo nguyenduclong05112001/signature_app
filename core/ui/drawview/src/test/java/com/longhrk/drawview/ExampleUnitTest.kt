@@ -1,4 +1,4 @@
-package com.longhrk.core.ui
+package com.longhrk.drawview
 
 import org.junit.Test
 
