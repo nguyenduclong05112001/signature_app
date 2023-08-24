@@ -24,5 +24,4 @@ rootProject.name = "BaseCode"
 include(":app")
 include(":core:ui")
 include(":core:data")
-include(":core:matrix")
 include(":core:network")
