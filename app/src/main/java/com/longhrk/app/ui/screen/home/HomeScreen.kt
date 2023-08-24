@@ -75,7 +75,7 @@ fun HomeScreen(
         HeaderApp(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(20.dp),
+                .padding(vertical = 10.dp, horizontal = 15.dp),
             icon = painterResource(id = R.drawable.ic_menu),
         ) { onSettingScreen() }
 

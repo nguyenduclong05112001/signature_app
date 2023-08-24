@@ -8,6 +8,7 @@
 
     <!--Setting-->
     <string name="setting">Setting</string>
+    <string name="version">Version</string>
 
     <!--Draw Signature-->
     <string name="draw_signature">Draw your signature</string>
@@ -15,5 +16,13 @@
     <string name="color_picker">Color Picker</string>
     <string name="cancel">Cancel</string>
     <string name="done">Done</string>
+    <string name="save">Save</string>
     <string name="draw_size">Draw size</string>
+
+    <!--Dialog-->
+    <string name="loading">Loading…</string>
+    <string name="notification">Notification</string>
+    <string name="confirm">Confirm</string>
+    <string name="content_ofconfirm_dialog">Are you sure you want to save this signature?</string>
+    <string name="save_success">You have successfully saved it, now you can view it in your gallery, Thank you for using my application</string>
 </resources>

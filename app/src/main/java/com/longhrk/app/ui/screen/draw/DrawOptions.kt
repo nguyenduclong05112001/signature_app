@@ -42,6 +42,7 @@ fun DrawOptions(
 
     val currentTypeExpanded by drawSignatureViewModel.currentTypeExpanded.collectAsState()
     val currentDrawColor by drawSignatureViewModel.currentDrawColor.collectAsState()
+    val currentStateUI by drawSignatureViewModel.currentStateUI.collectAsState()
 
     Column(modifier = modifier) {
 
@@ -79,6 +80,7 @@ fun DrawOptions(
                 .weight(1f)
                 .padding(7.dp)
                 .clickable(
+                    enabled = currentStateUI.saveEnabled,
                     interactionSource = interactionSource,
                     indication = null
                 ) {
@@ -89,7 +91,9 @@ fun DrawOptions(
                         .size(32.dp)
                         .align(Alignment.Center),
                     painter = painterResource(id = R.drawable.ic_save),
-                    tint = MaterialTheme.colorScheme.primary,
+                    tint = if (currentStateUI.saveEnabled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.primary.copy(
+                        0.5f
+                    ),
                     contentDescription = null
                 )
             }
@@ -98,6 +102,7 @@ fun DrawOptions(
                 .weight(1f)
                 .padding(7.dp)
                 .clickable(
+                    enabled = currentStateUI.undoEnabled,
                     interactionSource = interactionSource,
                     indication = null
                 ) {
@@ -109,7 +114,9 @@ fun DrawOptions(
                         .size(32.dp)
                         .align(Alignment.Center),
                     painter = painterResource(id = R.drawable.ic_undo),
-                    tint = MaterialTheme.colorScheme.primary,
+                    tint = if (currentStateUI.undoEnabled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.primary.copy(
+                        0.5f
+                    ),
                     contentDescription = null
                 )
             }
@@ -118,6 +125,7 @@ fun DrawOptions(
                 .weight(1f)
                 .padding(7.dp)
                 .clickable(
+                    enabled = currentStateUI.redoEnabled,
                     interactionSource = interactionSource,
                     indication = null
                 ) {
@@ -128,7 +136,9 @@ fun DrawOptions(
                         .size(32.dp)
                         .align(Alignment.Center),
                     painter = painterResource(id = R.drawable.ic_redo),
-                    tint = MaterialTheme.colorScheme.primary,
+                    tint = if (currentStateUI.redoEnabled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.primary.copy(
+                        0.5f
+                    ),
                     contentDescription = null
                 )
             }
@@ -156,6 +166,7 @@ fun DrawOptions(
                 .weight(1f)
                 .padding(7.dp)
                 .clickable(
+                    enabled = currentStateUI.resetEnabled,
                     interactionSource = interactionSource,
                     indication = null
                 ) {
@@ -166,7 +177,9 @@ fun DrawOptions(
                         .size(32.dp)
                         .align(Alignment.Center),
                     painter = painterResource(id = R.drawable.ic_restart),
-                    tint = MaterialTheme.colorScheme.primary,
+                    tint = if (currentStateUI.resetEnabled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.primary.copy(
+                        0.5f
+                    ),
                     contentDescription = null
                 )
             }

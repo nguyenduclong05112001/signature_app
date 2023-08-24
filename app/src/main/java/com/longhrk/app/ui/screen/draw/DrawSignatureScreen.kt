@@ -9,10 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -35,7 +31,8 @@ fun DrawSignatureScreen(
         HeaderApp(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(20.dp),
+                .background(MaterialTheme.colorScheme.onBackground.copy(0.1f))
+                .padding(vertical = 10.dp, horizontal = 15.dp),
             icon = painterResource(id = R.drawable.ic_arrow_back),
             title = stringResource(id = R.string.draw_signature)
         ) { onBackScreen() }
