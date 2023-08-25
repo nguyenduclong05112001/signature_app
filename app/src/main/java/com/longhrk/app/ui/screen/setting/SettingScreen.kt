@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,6 +29,8 @@ import com.longhrk.app.ui.extensions.getVersionName
 @Composable
 fun SettingScreen(onBackScreen: () -> Unit) {
     val context = LocalContext.current
+
+    val scrollState = rememberScrollState()
 
     Column(
         modifier = Modifier
@@ -48,6 +52,7 @@ fun SettingScreen(onBackScreen: () -> Unit) {
             modifier = Modifier
                 .weight(1f)
                 .fillMaxWidth()
+                .verticalScroll(scrollState)
         ) {
             OptionSetting(
                 modifier = Modifier
@@ -57,7 +62,7 @@ fun SettingScreen(onBackScreen: () -> Unit) {
                     }
                     .background(MaterialTheme.colorScheme.onBackground.copy(0.1f))
                     .padding(vertical = 10.dp, horizontal = 15.dp),
-                textContent = "Here test"
+                textContent = stringResource(id = R.string.terms_of_use)
             )
 
             OptionSetting(
@@ -68,7 +73,7 @@ fun SettingScreen(onBackScreen: () -> Unit) {
                     }
                     .background(MaterialTheme.colorScheme.onBackground.copy(0.1f))
                     .padding(vertical = 10.dp, horizontal = 15.dp),
-                textContent = "Here test"
+                textContent = stringResource(id = R.string.privacy_policy)
             )
 
             OptionSetting(
@@ -79,7 +84,14 @@ fun SettingScreen(onBackScreen: () -> Unit) {
                     }
                     .background(MaterialTheme.colorScheme.onBackground.copy(0.1f))
                     .padding(vertical = 10.dp, horizontal = 15.dp),
-                textContent = "Here test"
+                textContent = stringResource(id = R.string.help)
+            )
+
+            Text(
+                modifier = Modifier.padding(15.dp),
+                text = stringResource(id = R.string.let_me_know_how_i_can_do_better),
+                color = MaterialTheme.colorScheme.onBackground,
+                style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Light)
             )
 
             OptionSetting(
@@ -90,8 +102,17 @@ fun SettingScreen(onBackScreen: () -> Unit) {
                     }
                     .background(MaterialTheme.colorScheme.onBackground.copy(0.1f))
                     .padding(vertical = 10.dp, horizontal = 15.dp),
-                textContent = "Here test"
+                textContent = stringResource(id = R.string.feedback)
             )
+
+            Text(
+                modifier = Modifier.padding(15.dp),
+                text = stringResource(id = R.string.follow_me),
+                color = MaterialTheme.colorScheme.onBackground,
+                style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Light)
+            )
+
+
         }
 
         Row(

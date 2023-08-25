@@ -15,3 +15,7 @@ val errorDark = Color(0xFFBA1A1A)
 val errorContainerDark = Color(0xFFFFDAD6)
 val backgroundDark = Color(0xFF000000)
 val onBackgroundDark = Color(0xFFF5F4F4)
+
+val youtubeColor = Color(0xFFFF1100)
+val facebookColor = Color(0xFF011AFF)
+val playStoreColor = Color(0xFF4CAF50)

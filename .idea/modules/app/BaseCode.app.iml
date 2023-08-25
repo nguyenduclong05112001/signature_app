@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module version="4">
+  <component name="ModuleClassLoaderOverlays">
+    <paths>
+      <option value="/var/folders/00/1t3ff2pd481ggnq94jbjz1x40000gn/T/overlay10042734919223697912" />
+      <option value="/var/folders/00/1t3ff2pd481ggnq94jbjz1x40000gn/T/overlay6632094661168886576" />
+      <option value="/var/folders/00/1t3ff2pd481ggnq94jbjz1x40000gn/T/overlay6952193440813720222" />
+      <option value="/var/folders/00/1t3ff2pd481ggnq94jbjz1x40000gn/T/overlay2398387688514925564" />
+      <option value="/var/folders/00/1t3ff2pd481ggnq94jbjz1x40000gn/T/overlay8953920869506715565" />
+      <option value="/var/folders/00/1t3ff2pd481ggnq94jbjz1x40000gn/T/overlay3872882921003999739" />
+      <option value="/var/folders/00/1t3ff2pd481ggnq94jbjz1x40000gn/T/overlay5585319951603131488" />
+      <option value="/var/folders/00/1t3ff2pd481ggnq94jbjz1x40000gn/T/overlay10685229302827987364" />
+      <option value="/var/folders/00/1t3ff2pd481ggnq94jbjz1x40000gn/T/overlay3285488510304513360" />
+      <option value="/var/folders/00/1t3ff2pd481ggnq94jbjz1x40000gn/T/overlay12429247653689810794" />
+    </paths>
+  </component>
   <component name="SonarLintModuleSettings">
     <option name="uniqueId" value="9ce07689-1570-4d28-9694-79111aafbc2a" />
   </component>
