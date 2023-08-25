@@ -1,7 +1,6 @@
 package com.longhrk.app.ui.screen.draw
 
 import android.os.Build
-import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -15,10 +14,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asAndroidBitmap
-import androidx.compose.ui.layout.findRootCoordinates
-import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
@@ -30,8 +26,8 @@ import com.longhrk.app.ui.components.model.DialogType
 import com.longhrk.app.ui.extensions.toColor
 import com.longhrk.app.ui.viewmodel.drag.DrawSignatureViewModel
 import com.longhrk.app.ui.viewmodel.drag.model.TypeExpanded
-import io.ak1.drawbox.DrawBox
-import io.ak1.drawbox.rememberDrawController
+import com.longhrk.drawview.DrawBox
+import com.longhrk.drawview.rememberDrawController
 
 @RequiresApi(Build.VERSION_CODES.Q)
 @Composable
@@ -40,24 +36,10 @@ fun ContentDrawScreen(
     drawSignatureViewModel: DrawSignatureViewModel
 ) {
     val context = LocalContext.current
-    val coroutineScope = rememberCoroutineScope()
     val currentStateUI by drawSignatureViewModel.currentStateUI.collectAsState()
 
     val drawController = rememberDrawController().apply {
         changeBgColor(MaterialTheme.colorScheme.onBackground.copy(0.3f))
-        trackHistory(
-            scope = coroutineScope,
-            trackHistory = { currentUndo, currentRedo ->
-                drawSignatureViewModel.updateCurrentStateUI(
-                    currentStateUI.copy(
-                        resetEnabled = currentUndo != 0 || currentRedo != 0,
-                        saveEnabled = currentUndo != 0,
-                        redoEnabled = currentRedo != 0,
-                        undoEnabled = currentUndo != 0,
-                    )
-                )
-            }
-        )
     }
 
     val currentDrawColor by drawSignatureViewModel.currentDrawColor.collectAsState()
@@ -86,7 +68,7 @@ fun ContentDrawScreen(
                         bottom.linkTo(drawOptions.top)
 
                         width = Dimension.matchParent
-                        height = Dimension.value(200.dp)
+                        height = Dimension.fillToConstraints
                     },
                 drawController = drawController,
                 bitmapCallback = { imageBitmap, _ ->
@@ -96,6 +78,16 @@ fun ContentDrawScreen(
                             context = context
                         )
                     }
+                },
+                trackHistory = { currentUndo, currentRedo ->
+                    drawSignatureViewModel.updateCurrentStateUI(
+                        currentStateUI.copy(
+                            resetEnabled = currentUndo != 0 || currentRedo != 0,
+                            saveEnabled = currentUndo != 0,
+                            redoEnabled = currentRedo != 0,
+                            undoEnabled = currentUndo != 0,
+                        )
+                    )
                 }
             )
 

@@ -5,7 +5,6 @@ colorpickerCompose = "1.0.4"
 compileSdk = "34"
 constraintlayoutCompose = "1.0.1"
 converterGson = "2.9.0"
-drawbox = "1.0.3"
 gson = "2.10.1"
 hiltNavigationCompose = "1.0.0"
 loggingInterceptor = "4.11.0"
@@ -34,7 +33,6 @@ junitVer = "4.13.2"
 androidxTestExtjunit = "1.1.5"
 androidxTestEspressoCore = "3.5.1"
 androidxNavigationCompose = "2.7.0"
-comGoogleAndroidMaterial = "1.9.0"
 
 roomRersion = "2.5.2"
 
@@ -54,7 +52,6 @@ androidx-lifecycle = { module = "androidx.lifecycle:lifecycle-runtime-ktx", vers
 androidx-activity = { module = "androidx.activity:activity-compose", version.ref = "androidxActivity" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 colorpicker-compose = { module = "com.github.skydoves:colorpicker-compose", version.ref = "colorpickerCompose" }
-com-google-android-material = { module = "com.google.android.material:material", version.ref = "comGoogleAndroidMaterial" }
 
 androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "composeUiVersion" }
 androidx-compose-ui-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "composeUiVersion" }
@@ -64,7 +61,6 @@ androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-mani
 
 androidx-compose-material = { module = "androidx.compose.material3:material3", version.ref = "androidxComposeMaterial" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
-drawbox = { module = "io.ak1:drawbox", version.ref = "drawbox" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 junit = { module = "junit:junit", version.ref = "junitVer" }
 androidx-test-ext-junit = { module = "androidx.test.ext:junit", version.ref = "androidxTestExtjunit" }

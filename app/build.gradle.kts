@@ -67,6 +67,7 @@ android {
 dependencies {
     implementation(project(":core:data"))
     implementation(project(":core:network"))
+    implementation(project(":core:ui:drawview"))
 
     implementation(libs.androidx.core)
     implementation(libs.androidx.lifecycle)
@@ -93,9 +94,6 @@ dependencies {
 
     //lottie video splash screen
     implementation(libs.lottie.compose)
-
-    //drawbox
-    implementation(libs.drawbox)
 
     //constraintlayout
     implementation(libs.androidx.constraintlayout.compose)
