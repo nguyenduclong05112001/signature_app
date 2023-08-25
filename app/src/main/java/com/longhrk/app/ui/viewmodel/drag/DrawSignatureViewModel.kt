@@ -91,7 +91,7 @@ class DrawSignatureViewModel @Inject constructor() : ViewModel() {
             }
             withContext(Dispatchers.Main) {
                 imageUri?.let { _uriFromPhoto.value = it }
-                updateDialog(DialogType.ONE_BUTTON)
+                updateDialog(DialogType.TWO_BUTTON)
             }
         }
     }

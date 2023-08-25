@@ -104,9 +104,7 @@ fun ContentDrawScreen(
                     }
                     .background(MaterialTheme.colorScheme.onBackground)
                     .padding(vertical = 10.dp),
-                onSave = {
-                    drawSignatureViewModel.updateDialog(DialogType.TWO_BUTTON)
-                },
+                onSave = { drawController.saveBitmap() },
                 onUnDo = { drawController.unDo() },
                 onReDo = { drawController.reDo() },
                 onReset = { drawController.reset() },
@@ -115,49 +113,28 @@ fun ContentDrawScreen(
             )
         }
 
-        when (dialogState) {
-            DialogType.ONE_BUTTON -> {
-                DialogConfirm(
-                    type = DialogType.ONE_BUTTON,
-                    title = stringResource(id = R.string.notification),
-                    content = stringResource(id = R.string.save_success),
-                    buttonContent = ButtonContent(
-                        textContent = stringResource(id = R.string.done),
-                        onClick = {
-                            drawSignatureViewModel.updateDialog(null)
-                            drawSignatureViewModel.shareUriOutApplication(
-                                context = context,
-                                uri = uriShare
-                            )
-                        }
-                    ),
-                )
-            }
+        if (dialogState == DialogType.TWO_BUTTON) {
+            DialogConfirm(
+                type = DialogType.TWO_BUTTON,
+                title = stringResource(id = R.string.notification),
+                content = stringResource(id = R.string.save_success),
 
-            DialogType.TWO_BUTTON -> {
-                DialogConfirm(
-                    type = DialogType.TWO_BUTTON,
-                    title = stringResource(id = R.string.confirm),
-                    content = stringResource(id = R.string.content_ofconfirm_dialog),
-                    buttonCancel = ButtonContent(
-                        textContent = stringResource(id = R.string.cancel),
-                        onClick = {
-                            drawSignatureViewModel.updateDialog(null)
-                        }
-                    ),
-                    buttonAgree = ButtonContent(
-                        textContent = stringResource(id = R.string.save),
-                        onClick = {
-                            drawController.saveBitmap()
-                        }
-                    ),
-                )
-            }
+                buttonCancel = ButtonContent(
+                    textContent = stringResource(id = R.string.done),
+                    onClick = { drawSignatureViewModel.updateDialog(null) }
+                ),
 
-            else -> {
-                //hide
-            }
+                buttonAgree = ButtonContent(
+                    textContent = stringResource(id = R.string.share),
+                    onClick = {
+                        drawSignatureViewModel.updateDialog(null)
+                        drawSignatureViewModel.shareUriOutApplication(
+                            context = context,
+                            uri = uriShare
+                        )
+                    }
+                ),
+            )
         }
-
     }
 }

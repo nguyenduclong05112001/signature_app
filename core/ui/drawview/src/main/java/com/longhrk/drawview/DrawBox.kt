@@ -74,12 +74,14 @@ fun DrawBox(
                                             drawController.insertNewPath(offset)
                                         },
                                         onDrag = { change, _ ->
-                                            val newPoint = change.position
-                                            if (newPoint.x >= offsetCanvasTopStart.value.x
-                                                && newPoint.x <= offsetCanvasBottomEnd.value.x
-                                                && newPoint.y >= offsetCanvasTopStart.value.y
-                                                && newPoint.y <= offsetCanvasBottomEnd.value.y
-                                            ) drawController.updateLatestPath(newPoint)
+                                            if (change.position.x >= offsetCanvasTopStart.value.x
+                                                && change.position.x <= offsetCanvasBottomEnd.value.x
+                                                && change.position.y >= offsetCanvasTopStart.value.y
+                                                && change.position.y <= offsetCanvasBottomEnd.value.y
+                                            ) {
+                                                val newPoint = change.position
+                                                drawController.updateLatestPath(newPoint)
+                                            }
                                         }
                                     )
                                 }) {

@@ -2,6 +2,8 @@ package com.longhrk.app.ui.screen.draw
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -12,22 +14,19 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.BasicTextField
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.res.stringResource
@@ -39,6 +38,7 @@ import com.github.skydoves.colorpicker.compose.rememberColorPickerController
 import com.longhrk.app.R
 import com.longhrk.app.ui.extensions.toColor
 import com.longhrk.app.ui.viewmodel.drag.DrawSignatureViewModel
+import com.longhrk.app.ui.viewmodel.drag.model.TypeExpanded
 import kotlin.math.roundToInt
 
 @Composable
@@ -46,6 +46,8 @@ fun ColorPickerOption(
     modifier: Modifier,
     drawSignatureViewModel: DrawSignatureViewModel
 ) {
+    val interactionSource = remember { MutableInteractionSource() }
+
     val controller = rememberColorPickerController()
 
     val currentDrawColor by drawSignatureViewModel.currentDrawColor.collectAsState()
@@ -55,15 +57,15 @@ fun ColorPickerOption(
     }
 
     var redColor by remember {
-        mutableStateOf(0)
+        mutableIntStateOf(0)
     }
 
     var greenColor by remember {
-        mutableStateOf(0)
+        mutableIntStateOf(0)
     }
 
     var blueColor by remember {
-        mutableStateOf(0)
+        mutableIntStateOf(0)
     }
 
     Column(
@@ -79,7 +81,7 @@ fun ColorPickerOption(
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(170.dp)
+                .height(150.dp)
                 .padding(20.dp)
                 .border(
                     width = 1.dp,
@@ -92,9 +94,9 @@ fun ColorPickerOption(
                 controller = controller,
                 paletteContentScale = PaletteContentScale.FIT,
                 onColorChanged = { colorEnvelope ->
-                    redColor = (colorEnvelope.color.red * 255).roundToInt()
-                    greenColor = (colorEnvelope.color.green * 255).roundToInt()
-                    blueColor = (colorEnvelope.color.blue * 255).roundToInt()
+                    redColor = ((colorEnvelope.color.red) * 255.0f).roundToInt()
+                    greenColor = ((colorEnvelope.color.green) * 255.0f).roundToInt()
+                    blueColor = ((colorEnvelope.color.blue) * 255.0f).roundToInt()
 
                     if (colorEnvelope.fromUser) {
                         colorShowing = "#${colorEnvelope.hexCode}"
@@ -124,53 +126,110 @@ fun ColorPickerOption(
 
                 BasicTextField(
                     modifier = Modifier
+                        .width(100.dp)
                         .background(MaterialTheme.colorScheme.background.copy(0.05f))
                         .border(width = 1.dp, color = MaterialTheme.colorScheme.background)
                         .padding(vertical = 5.dp),
                     readOnly = true,
                     enabled = false,
                     value = colorShowing,
+                    singleLine = true,
+                    maxLines = 1,
                     textStyle = MaterialTheme.typography.labelMedium.copy(textAlign = TextAlign.Center),
                     onValueChange = {}
                 )
             }
 
             Column(verticalArrangement = Arrangement.SpaceBetween) {
-                BasicTextField(
-                        modifier = Modifier
-                            .background(MaterialTheme.colorScheme.background.copy(0.05f))
-                            .border(width = 1.dp, color = MaterialTheme.colorScheme.background)
-                            .padding(vertical = 5.dp),
-                        readOnly = true,
-                        enabled = false,
-                        value = "Red: $redColor",
-                        textStyle = MaterialTheme.typography.labelMedium.copy(textAlign = TextAlign.Center),
-                        onValueChange = {}
-                    )
-                Spacer(modifier = Modifier.size(10.dp))
+                Row(verticalAlignment = Alignment.CenterVertically) {
                     BasicTextField(
                         modifier = Modifier
+                            .width(70.dp)
                             .background(MaterialTheme.colorScheme.background.copy(0.05f))
-                            .border(width = 1.dp, color = MaterialTheme.colorScheme.background)
                             .padding(vertical = 5.dp),
                         readOnly = true,
                         enabled = false,
-                        value = "Green: $greenColor",
+                        singleLine = true,
+                        maxLines = 1,
+                        value = "Red",
                         textStyle = MaterialTheme.typography.labelMedium.copy(textAlign = TextAlign.Center),
                         onValueChange = {}
                     )
-                Spacer(modifier = Modifier.size(10.dp))
                     BasicTextField(
                         modifier = Modifier
+                            .width(70.dp)
                             .background(MaterialTheme.colorScheme.background.copy(0.05f))
                             .border(width = 1.dp, color = MaterialTheme.colorScheme.background)
                             .padding(vertical = 5.dp),
                         readOnly = true,
                         enabled = false,
-                        value = "Blue: $blueColor",
+                        singleLine = true,
+                        maxLines = 1,
+                        value = redColor.toString(),
                         textStyle = MaterialTheme.typography.labelMedium.copy(textAlign = TextAlign.Center),
                         onValueChange = {}
                     )
+                }
+                Spacer(modifier = Modifier.size(10.dp))
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    BasicTextField(
+                        modifier = Modifier
+                            .width(70.dp)
+                            .background(MaterialTheme.colorScheme.background.copy(0.05f))
+                            .padding(vertical = 5.dp),
+                        readOnly = true,
+                        enabled = false,
+                        singleLine = true,
+                        maxLines = 1,
+                        value = "Green",
+                        textStyle = MaterialTheme.typography.labelMedium.copy(textAlign = TextAlign.Center),
+                        onValueChange = {}
+                    )
+                    BasicTextField(
+                        modifier = Modifier
+                            .width(70.dp)
+                            .background(MaterialTheme.colorScheme.background.copy(0.05f))
+                            .border(width = 1.dp, color = MaterialTheme.colorScheme.background)
+                            .padding(vertical = 5.dp),
+                        readOnly = true,
+                        enabled = false,
+                        singleLine = true,
+                        maxLines = 1,
+                        value = greenColor.toString(),
+                        textStyle = MaterialTheme.typography.labelMedium.copy(textAlign = TextAlign.Center),
+                        onValueChange = {}
+                    )
+                }
+                Spacer(modifier = Modifier.size(10.dp))
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    BasicTextField(
+                        modifier = Modifier
+                            .width(70.dp)
+                            .background(MaterialTheme.colorScheme.background.copy(0.05f))
+                            .padding(vertical = 5.dp),
+                        readOnly = true,
+                        enabled = false,
+                        singleLine = true,
+                        maxLines = 1,
+                        value = "Blue",
+                        textStyle = MaterialTheme.typography.labelMedium.copy(textAlign = TextAlign.Center),
+                        onValueChange = {}
+                    )
+                    BasicTextField(
+                        modifier = Modifier
+                            .width(70.dp)
+                            .background(MaterialTheme.colorScheme.background.copy(0.05f))
+                            .border(width = 1.dp, color = MaterialTheme.colorScheme.background)
+                            .padding(vertical = 5.dp),
+                        readOnly = true,
+                        enabled = false,
+                        singleLine = true,
+                        maxLines = 1,
+                        value = blueColor.toString(),
+                        textStyle = MaterialTheme.typography.labelMedium.copy(textAlign = TextAlign.Center),
+                        onValueChange = {}
+                    )
+                }
             }
         }
 
@@ -182,12 +241,25 @@ fun ColorPickerOption(
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
+                modifier = Modifier.clickable(
+                    interactionSource = interactionSource,
+                    indication = null
+                ) {
+                    drawSignatureViewModel.updateTypeExpanded(TypeExpanded.NONE)
+                },
                 text = stringResource(id = R.string.cancel),
                 color = MaterialTheme.colorScheme.background,
                 style = MaterialTheme.typography.labelMedium
             )
 
             Text(
+                modifier = Modifier.clickable(
+                    interactionSource = interactionSource,
+                    indication = null
+                ) {
+                    drawSignatureViewModel.updateCurrentColor(colorShowing)
+                    drawSignatureViewModel.updateTypeExpanded(TypeExpanded.NONE)
+                },
                 text = stringResource(id = R.string.done),
                 color = MaterialTheme.colorScheme.background,
                 style = MaterialTheme.typography.labelMedium
