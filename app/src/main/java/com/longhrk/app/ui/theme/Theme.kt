@@ -31,7 +31,7 @@ val DarkColors = darkColorScheme(
 )
 
 @Composable
-fun LongHRK_Signature_Them(
+fun DrawThem(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {

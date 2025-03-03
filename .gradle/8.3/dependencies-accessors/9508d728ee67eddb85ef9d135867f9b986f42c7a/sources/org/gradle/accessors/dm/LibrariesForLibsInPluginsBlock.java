@@ -878,7 +878,7 @@ public class LibrariesForLibsInPluginsBlock extends AbstractExternalDependencyFa
             public Provider<String> getAndroidXCore() { return getVersion("androidXCore"); }
 
             /**
-             * Returns the version associated to this alias: androidxActivity (1.7.2)
+             * Returns the version associated to this alias: androidxActivity (1.10.0)
              * If the version is a rich version and that its not expressible as a
              * single version string, then an empty string is returned.
              * This version was declared in catalog libs.versions.toml
@@ -950,7 +950,7 @@ public class LibrariesForLibsInPluginsBlock extends AbstractExternalDependencyFa
             public Provider<String> getColorpickerCompose() { return getVersion("colorpickerCompose"); }
 
             /**
-             * Returns the version associated to this alias: compileSdk (34)
+             * Returns the version associated to this alias: compileSdk (35)
              * If the version is a rich version and that its not expressible as a
              * single version string, then an empty string is returned.
              * This version was declared in catalog libs.versions.toml

@@ -4,6 +4,7 @@ import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Box
@@ -16,21 +17,23 @@ import androidx.navigation.compose.rememberNavController
 import com.longhrk.app.ui.EventHandler
 import com.longhrk.app.ui.NavGraph
 import com.longhrk.app.ui.extensions.handleNavEvent
-import com.longhrk.app.ui.theme.LongHRK_Signature_Them
+import com.longhrk.app.ui.theme.DrawThem
 import com.longhrk.app.ui.viewmodel.NavViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     private val navigationViewModel by viewModels<NavViewModel>()
+
     @RequiresApi(Build.VERSION_CODES.Q)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContent {
             val eventHandler = remember {
                 EventHandler(navigationViewModel)
             }
-            LongHRK_Signature_Them {
+            DrawThem {
                 GraphMainApp(eventHandler)
             }
         }
@@ -41,6 +44,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 private fun GraphMainApp(eventHandler: EventHandler) {
     val navController = rememberNavController()
+
     LaunchedEffect(Unit) {
         eventHandler.navEvent().collect {
             navController.handleNavEvent(it)
@@ -48,6 +52,9 @@ private fun GraphMainApp(eventHandler: EventHandler) {
     }
 
     Box(modifier = Modifier.fillMaxSize()) {
-        NavGraph(eventHandler = eventHandler, navController = navController)
+        NavGraph(
+            eventHandler = eventHandler,
+            navController = navController
+        )
     }
 }

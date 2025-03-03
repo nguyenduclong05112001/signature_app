@@ -2,7 +2,7 @@
 
 coilCompose = "2.4.0"
 colorpickerCompose = "1.0.4"
-compileSdk = "34"
+compileSdk = "35"
 constraintlayoutCompose = "1.0.1"
 converterGson = "2.9.0"
 gson = "2.10.1"
@@ -25,7 +25,7 @@ hiltAndroid = "2.47"
 androidXCore = "1.10.1"
 androidxAppcompat = "1.6.1"
 androidxLifecycle = "2.6.1"
-androidxActivity = "1.7.2"
+androidxActivity = "1.10.0"
 
 composeUiVersion = "1.5.0"
 androidxComposeMaterial = "1.1.1"

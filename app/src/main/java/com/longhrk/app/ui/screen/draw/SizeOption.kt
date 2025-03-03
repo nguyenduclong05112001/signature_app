@@ -12,7 +12,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -20,7 +19,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.longhrk.app.R
 import com.longhrk.app.ui.extensions.toColor
-import com.longhrk.app.ui.viewmodel.drag.DrawSignatureViewModel
+import com.longhrk.app.ui.screen.draw.viewmodel.DrawSignatureViewModel
 
 @Composable
 fun SizeOption(

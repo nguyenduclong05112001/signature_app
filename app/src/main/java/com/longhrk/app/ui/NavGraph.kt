@@ -4,7 +4,6 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -14,15 +13,13 @@ import com.longhrk.app.ui.screen.SplashScreen
 import com.longhrk.app.ui.screen.draw.DrawSignatureScreen
 import com.longhrk.app.ui.screen.home.HomeScreen
 import com.longhrk.app.ui.screen.setting.SettingScreen
-import com.longhrk.app.ui.viewmodel.drag.DrawSignatureViewModel
 
 @RequiresApi(Build.VERSION_CODES.Q)
 @Composable
 fun NavGraph(eventHandler: EventHandler, navController: NavHostController) {
     val startDestination = NavTarget.Splash.route
-    val activity = LocalContext.current as MainActivity
-
-    val drawSignatureViewModel = hiltViewModel<DrawSignatureViewModel>(activity)
+    val context = LocalContext.current
+    val activity = context as MainActivity
 
     NavHost(navController, startDestination) {
         composable(NavTarget.Splash.route) {
@@ -61,7 +58,6 @@ fun NavGraph(eventHandler: EventHandler, navController: NavHostController) {
 
         composable(NavTarget.Draw.route) {
             DrawSignatureScreen(
-                drawSignatureViewModel = drawSignatureViewModel,
                 onBackScreen = {
                     eventHandler.postNavEvent(
                         event = NavEvent.PopBackStack()

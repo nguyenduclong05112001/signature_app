@@ -15,7 +15,7 @@ import java.io.FileNotFoundException
 import java.io.IOException
 import java.io.OutputStream
 
-fun Context.getVersionName(): String {
+fun Context.getVersionName(): String? {
     return this.packageManager.getPackageInfo(
         this.packageName,
         0

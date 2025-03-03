@@ -37,7 +37,7 @@ import com.github.skydoves.colorpicker.compose.PaletteContentScale
 import com.github.skydoves.colorpicker.compose.rememberColorPickerController
 import com.longhrk.app.R
 import com.longhrk.app.ui.extensions.toColor
-import com.longhrk.app.ui.viewmodel.drag.DrawSignatureViewModel
+import com.longhrk.app.ui.screen.draw.viewmodel.DrawSignatureViewModel
 import com.longhrk.app.ui.viewmodel.drag.model.TypeExpanded
 import kotlin.math.roundToInt
 

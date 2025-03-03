@@ -25,7 +25,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.longhrk.app.R
 import com.longhrk.app.ui.extensions.toColor
-import com.longhrk.app.ui.viewmodel.drag.DrawSignatureViewModel
+import com.longhrk.app.ui.screen.draw.viewmodel.DrawSignatureViewModel
 import com.longhrk.app.ui.viewmodel.drag.data.DefaultColors.colors
 import com.longhrk.app.ui.viewmodel.drag.model.TypeExpanded
 

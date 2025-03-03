@@ -11,7 +11,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asAndroidBitmap
 import androidx.compose.ui.platform.LocalContext
@@ -24,10 +23,10 @@ import com.longhrk.app.ui.components.DialogConfirm
 import com.longhrk.app.ui.components.model.ButtonContent
 import com.longhrk.app.ui.components.model.DialogType
 import com.longhrk.app.ui.extensions.toColor
-import com.longhrk.app.ui.viewmodel.drag.DrawSignatureViewModel
+import com.longhrk.app.ui.screen.draw.viewmodel.DrawSignatureViewModel
 import com.longhrk.app.ui.viewmodel.drag.model.TypeExpanded
-import com.longhrk.drawview.DrawBox
-import com.longhrk.drawview.rememberDrawController
+import com.longhrk.app.ui.screen.draw.drawview.DrawBox
+import com.longhrk.app.ui.screen.draw.drawview.rememberDrawController
 
 @RequiresApi(Build.VERSION_CODES.Q)
 @Composable

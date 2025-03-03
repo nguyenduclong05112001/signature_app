@@ -1,9 +1,7 @@
 package com.longhrk.app.ui.screen.home
 
 import android.widget.Toast
-import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -11,7 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.Icon
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -31,6 +29,7 @@ import com.airbnb.lottie.compose.rememberLottieComposition
 import com.longhrk.app.R
 import com.longhrk.app.ui.components.ButtonMain
 import com.longhrk.app.ui.components.HeaderApp
+import com.longhrk.app.ui.screen.draw.screen.BaseScreen
 
 @Composable
 fun HomeScreen(
@@ -42,7 +41,7 @@ fun HomeScreen(
     val context = LocalContext.current
     var backPressTime = 0L
 
-    BackHandler {
+    val backHandler = {
         if (backPressTime + 1500 > System.currentTimeMillis()) {
             onBackPress()
         } else {
@@ -66,52 +65,59 @@ fun HomeScreen(
         restartOnPlay = false
     )
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background),
-        horizontalAlignment = Alignment.CenterHorizontally
+    BaseScreen(
+        onBackHandler = backHandler,
+        topBar = {
+            HeaderApp(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .statusBarsPadding()
+                    .padding(vertical = 10.dp, horizontal = 15.dp),
+                icon = painterResource(id = R.drawable.ic_menu),
+                onClick = onSettingScreen
+            )
+        }
     ) {
-        HeaderApp(
+        Column(
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 10.dp, horizontal = 15.dp),
-            icon = painterResource(id = R.drawable.ic_menu),
-        ) { onSettingScreen() }
-
-        LottieAnimation(
-            modifier = Modifier
-                .fillMaxWidth()
-                .weight(2f),
-            composition = animationPresent,
-            progress = { progress },
-        )
-
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(
-                    horizontal = 20.dp
-                )
-                .weight(1f)
+                .fillMaxSize()
+                .background(MaterialTheme.colorScheme.background),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            ButtonMain(
+            LottieAnimation(
                 modifier = Modifier
-                    .weight(1f)
-                    .padding(vertical = 10.dp),
-                contentButton = stringResource(id = R.string.create),
-                iconButton = painterResource(id = R.drawable.ic_create)
-            ) { onDrawSignature() }
+                    .fillMaxWidth()
+                    .weight(2f),
+                composition = animationPresent,
+                progress = { progress },
+            )
 
-            Spacer(modifier = Modifier.size(20.dp))
-
-            ButtonMain(
+            Row(
                 modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        horizontal = 20.dp
+                    )
                     .weight(1f)
-                    .padding(vertical = 10.dp),
-                contentButton = stringResource(id = R.string.generator),
-                iconButton = painterResource(id = R.drawable.ic_generate)
-            ) {}
+            ) {
+                ButtonMain(
+                    modifier = Modifier
+                        .weight(1f)
+                        .padding(vertical = 10.dp),
+                    contentButton = stringResource(id = R.string.create),
+                    iconButton = painterResource(id = R.drawable.ic_create)
+                ) { onDrawSignature() }
+
+                Spacer(modifier = Modifier.size(20.dp))
+
+                ButtonMain(
+                    modifier = Modifier
+                        .weight(1f)
+                        .padding(vertical = 10.dp),
+                    contentButton = stringResource(id = R.string.generator),
+                    iconButton = painterResource(id = R.drawable.ic_generate)
+                ) {}
+            }
         }
     }
 }

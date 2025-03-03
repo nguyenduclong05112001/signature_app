@@ -21,7 +21,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.longhrk.app.R
 import com.longhrk.app.ui.extensions.toColor
-import com.longhrk.app.ui.viewmodel.drag.DrawSignatureViewModel
+import com.longhrk.app.ui.screen.draw.viewmodel.DrawSignatureViewModel
 import com.longhrk.app.ui.viewmodel.drag.model.TypeExpanded.COLOR
 import com.longhrk.app.ui.viewmodel.drag.model.TypeExpanded.COLOR_PICKER
 import com.longhrk.app.ui.viewmodel.drag.model.TypeExpanded.NONE
